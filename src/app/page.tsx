@@ -1,16 +1,11 @@
 "use client"
 
-import {pdfDownloader} from "@/app/pdfDownloader";
+// import {pdfDownloader} from "@/app/pdfDownloader";
 import {useState} from "react";
+import Image from "next/image"
+import React from "react"
 
 export default function Home() {
-    let [download, setDownload] = useState("");
-    // download will be the PDF file we want
-    function handleDownload() :void {
-        // download a PDF version and send to email of a text
-        return setDownload(pdfDownloader)
-    }
-
     return (
       <main className="flex min-h-screen flex-col justify-around p-20 gap-7">
           <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
@@ -32,8 +27,10 @@ export default function Home() {
           <div className="flex flex-row justify-around flex-wrap">
               <div className="card bg-base-100 w-96 shadow-xl dark:bg-slate-800">
                   <figure>
-                      <img
+                      <Image
                           src="/tutoring-image.webp"
+                          width={384}
+                          height={322}
                           alt="Image of two girls holding books"/>
                   </figure>
                   <div className="card-body">
@@ -57,7 +54,7 @@ export default function Home() {
                             placeholder="Feedback"></textarea>
                   <div className="label">
                       <span className="label-text-alt"></span>
-                      <button onClick={handleDownload} type="button" className="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 ">Submit</button>
+                      <button type="button" className="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 ">Submit</button>
                   </div>
               </label>
           </div>
