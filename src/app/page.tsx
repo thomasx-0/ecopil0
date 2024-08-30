@@ -6,6 +6,14 @@ import Image from "next/image"
 import React from "react"
 
 export default function Home() {
+
+    const [download, setDownload] = useState<boolean>(false)
+
+    function handleDownload() {
+        console.log("Downloading download...")
+        return setDownload(!download)
+    }
+
     return (
       <main className="flex min-h-screen flex-col justify-around p-20 gap-7">
           <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
@@ -24,7 +32,7 @@ export default function Home() {
                   </a>
               </div>
           </div>
-          <div className="flex flex-row justify-around flex-wrap">
+          <div className="flex flex-row justify-around flex-wrap gap-x-7">
               <div className="card bg-base-100 w-96 shadow-xl dark:bg-slate-800">
                   <figure>
                       <Image
@@ -50,11 +58,11 @@ export default function Home() {
                       <span className="label-text">Feedback</span>
                       <span className="label-text-alt">Alt label</span>
                   </div>
-                  <textarea className="textarea textarea-bordered h-24 dark:bg-slate-800"
+                  <textarea className="textarea textarea-bordered h-24 w-96 dark:bg-slate-800"
                             placeholder="Feedback"></textarea>
                   <div className="label">
                       <span className="label-text-alt"></span>
-                      <button type="button" className="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 ">Submit</button>
+                      <button type="button" onClick={handleDownload} className="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 ">Submit</button>
                   </div>
               </label>
           </div>
@@ -64,7 +72,7 @@ export default function Home() {
           </div>
           <footer
               className="fixed bottom-0 left-0 z-20 w-full p-4 bg-white border-t border-gray-200 shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800 dark:border-gray-600">
-          <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023
+          <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400"> 2024
           </span>
               <ul className="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
                   <li>
