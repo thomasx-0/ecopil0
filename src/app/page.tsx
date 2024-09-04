@@ -1,23 +1,47 @@
 "use client"
 
-// import {useState} from "react";
 import Image from "next/image"
-import React from "react"
-import {emailSenderUtil} from "@/app/utils/feedbackSender";
+import React, {useState} from "react"
+
+
+interface PopupProps {
+  onClose: () => void;
+}
+
+const Popup: React.FC<PopupProps> = ({ onClose }) => {
+  return (
+      <section
+          className="fixed flex items-center justify-between max-w-4xl p-4 mx-auto bg-white border border-gray-200 shadow-md dark:bg-gray-900 left-12 bottom-16 dark:shadow-gray-900 shadow-gray-100 md:gap-x-4 dark:border-gray-700 rounded-2xl">
+          <p className="text-sm text-gray-600 dark:text-gray-300">Thank you for submitting your feedback, we will get to your query shortly.</p>
+
+          <button
+              onClick={onClose}
+              className="flex items-center justify-center text-gray-700 transition-colors duration-300 rounded-full shrink-0 dark:text-gray-200 dark:hover:bg-gray-700 w-7 h-7 focus:outline-none hover:bg-gray-100">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
+                  <path
+                      d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/>
+              </svg>
+          </button>
+      </section>
+  );
+};
+
 
 export default function Home() {
+    const [isPopupVisible, setIsPopupVisible] = useState(false);
 
-    // const [email, setEmail] = useState
+    const showPopup = () => {
+        setIsPopupVisible(true);
+    };
 
-    function handleFeedback() {
-        console.log("email sent...")
-        return emailSenderUtil
-    }
+    const hidePopup = () => {
+        setIsPopupVisible(false);
+    };
 
     return (
-      <main className="flex min-h-screen flex-col justify-around p-20 gap-7">
-          <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-              <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
+        <main className="flex min-h-screen flex-col justify-around p-20 gap-7">
+            <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
+                <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
                   git clone https://github.com/thomasx-0/xapp.git
               </p>
               <div
@@ -62,8 +86,9 @@ export default function Home() {
                             placeholder="Feedback"></textarea>
                   <div className="label">
                       <span className="label-text-alt"></span>
-                      <button type="button" onClick={handleFeedback} className="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 ">Submit</button>
+                      <button type="button" onClick={showPopup} className="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 ">Submit</button>
                   </div>
+                  {isPopupVisible && <Popup onClose={hidePopup} />}
               </label>
           </div>
           <div
@@ -85,7 +110,7 @@ export default function Home() {
                       <a href="#" className="hover:underline me-4 md:me-6">Licensing</a>
                   </li>
                   <li>
-                      <a href="#" className="hover:underline">Contact</a>
+                      <button className="hover:underline">Contact</button>
                   </li>
               </ul>
           </footer>
