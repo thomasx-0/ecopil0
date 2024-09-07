@@ -78,13 +78,10 @@ export default function Home() {
                         <a href="#" className="hover:underline me-4 md:me-6">About</a>
                     </li>
                     <li>
-                        <button  onClick={showLoginPopup} className="hover:underline me-4 md:me-6">Privacy Policy</button>
+                        <button  onClick={showLoginPopup} className="hover:underline me-4 md:me-6">Login</button>
                     </li>
                     <li>
-                        <a href="#" className="hover:underline me-4 md:me-6">Licensing</a>
-                    </li>
-                    <li>
-                        <button onClick={showPopup} className="hover:underline">Contact</button>
+                        <button onClick={showPopup} className="hover:underline">Help</button>
                     </li>
                 </ul>
             </footer>
