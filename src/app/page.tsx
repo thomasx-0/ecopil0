@@ -2,33 +2,21 @@
 
 import Image from "next/image"
 import React, {useState} from "react"
-
-
-interface PopupProps {
-  onClose: () => void;
-}
-
-const Popup: React.FC<PopupProps> = ({ onClose }) => {
-  return (
-      <section
-          className="fixed flex items-center justify-between max-w-4xl p-4 mx-auto bg-white border border-gray-200 shadow-md dark:bg-gray-900 left-12 bottom-16 dark:shadow-gray-900 shadow-gray-100 md:gap-x-4 dark:border-gray-700 rounded-2xl">
-          <p className="text-sm text-gray-600 dark:text-gray-300">Thank you for submitting your feedback, we will get to your query shortly.</p>
-
-          <button
-              onClick={onClose}
-              className="flex items-center justify-center text-gray-700 transition-colors duration-300 rounded-full shrink-0 dark:text-gray-200 dark:hover:bg-gray-700 w-7 h-7 focus:outline-none hover:bg-gray-100">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
-                  <path
-                      d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"/>
-              </svg>
-          </button>
-      </section>
-  );
-};
+import {PopupHelp} from "@/app/PopupHelp";
+import {PopupLogin} from "@/app/PopupLogin";
 
 
 export default function Home() {
     const [isPopupVisible, setIsPopupVisible] = useState(false);
+    const [isLoginPopupVisible, setIsLoginPopupVisible] = useState(false);
+
+    const showLoginPopup = () => {
+        setIsLoginPopupVisible(true);
+    };
+
+    const hideLoginPopup = () => {
+        setIsLoginPopupVisible(false);
+    };
 
     const showPopup = () => {
         setIsPopupVisible(true);
@@ -56,64 +44,50 @@ export default function Home() {
                   </a>
               </div>
           </div>
-          <div className="flex flex-row justify-around flex-wrap gap-x-7">
-              <div className="card bg-base-100 w-96 shadow-xl dark:bg-slate-800">
-                  <figure>
-                      <Image
-                          src="/tutoring-image.webp"
-                          width={384}
-                          height={322}
-                          alt="Image of two girls holding books"/>
-                  </figure>
-                  <div className="card-body">
-                      <h2 className="card-title">
-                          Tutorials
-                          <div className="badge badge-primary">NEW</div>
-                      </h2>
-                      <p>Online tutoring sessions starting at $25.00 USD per hour</p>
-                      <div className="card-actions justify-end">
-                          <div className="badge badge-outline">AP Physics</div>
-                          <div className="badge badge-outline">A-Level Physics</div>
-                      </div>
-                  </div>
-              </div>
-              <label className="form-control">
-                  <div className="label">
-                      <span className="label-text">Feedback</span>
-                      <span className="label-text-alt">Alt label</span>
-                  </div>
-                  <textarea className="textarea textarea-bordered h-24 w-96 dark:bg-slate-800"
-                            placeholder="Feedback"></textarea>
-                  <div className="label">
-                      <span className="label-text-alt"></span>
-                      <button type="button" onClick={showPopup} className="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 ">Submit</button>
-                  </div>
-                  {isPopupVisible && <Popup onClose={hidePopup} />}
-              </label>
-          </div>
-          <div
-              className="relative flex place-items-end before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-
-          </div>
-          <footer
-              className="fixed bottom-0 left-0 z-20 w-full p-4 bg-white border-t border-gray-200 shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800 dark:border-gray-600">
-          <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400"> 2024
-          </span>
-              <ul className="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
-                  <li>
-                      <a href="#" className="hover:underline me-4 md:me-6">About</a>
-                  </li>
-                  <li>
-                      <a href="#" className="hover:underline me-4 md:me-6">Privacy Policy</a>
-                  </li>
-                  <li>
-                      <a href="#" className="hover:underline me-4 md:me-6">Licensing</a>
-                  </li>
-                  <li>
-                      <button className="hover:underline">Contact</button>
-                  </li>
-              </ul>
-          </footer>
-      </main>
-  );
+            <div className="flex flex-row justify-around flex-wrap gap-x-7">
+                <div className="card bg-base-100 w-96 shadow-xl dark:bg-gray-800">
+                    <figure>
+                        <Image
+                            src="/eco-tracker.webp"
+                            width={384}
+                            height={322}
+                            alt="Ecological poster"/>
+                    </figure>
+                    <div className="card-body">
+                        <h2 className="card-title">
+                            Eco Tracker Application
+                            <div
+                                className="inline-flex items-center rounded-full bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">NEW</div>
+                        </h2>
+                        <p>Eco-tracker application to help calculate your carbon footprint. Start by using the slider
+                            below. You will be rewarded with a digital badge for your progress.</p>
+                        <div className="card-actions justify-end">
+                            <div className="badge badge-outline">Ecology</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {isLoginPopupVisible && <PopupLogin onClose={hideLoginPopup}/>}
+            {isPopupVisible && <PopupHelp onClose={hidePopup}/>}
+            <footer
+                className="fixed bottom-0 left-0 z-20 w-full p-4 bg-white border-t border-gray-200 shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800 dark:border-gray-600">
+                <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400"> 2024
+                    </span>
+                <ul className="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
+                    <li>
+                        <a href="#" className="hover:underline me-4 md:me-6">About</a>
+                    </li>
+                    <li>
+                        <button  onClick={showLoginPopup} className="hover:underline me-4 md:me-6">Privacy Policy</button>
+                    </li>
+                    <li>
+                        <a href="#" className="hover:underline me-4 md:me-6">Licensing</a>
+                    </li>
+                    <li>
+                        <button onClick={showPopup} className="hover:underline">Contact</button>
+                    </li>
+                </ul>
+            </footer>
+        </main>
+    );
 }
