@@ -29,7 +29,7 @@ export default function Home() {
     return (
         <main className="flex min-h-screen flex-col justify-around p-20 gap-7">
             <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-                <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
+                <p className="fixed left-0 top-0 flex w-full justify-center border-b border-zinc-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-zinc-200 lg:p-4 lg:dark:bg-zinc-800/30">
                   git clone https://github.com/thomasx-0/eco-tracker.git
               </p>
               <div>
@@ -44,7 +44,7 @@ export default function Home() {
               </div>
           </div>
             <div className="flex flex-row justify-around flex-wrap gap-x-7">
-                <div className="card bg-base-100 w-96 shadow-xl dark:bg-gray-800">
+                <div className="card bg-base-100 w-96 shadow-xl dark:bg-zinc-800">
                     <figure>
                         <Image
                             src="/eco-tracker.webp"
@@ -69,10 +69,10 @@ export default function Home() {
             {isLoginPopupVisible && <PopupLogin onClose={hideLoginPopup}/>}
             {isPopupVisible && <PopupHelp onClose={hidePopup}/>}
             <footer
-                className="fixed bottom-0 gap-y-15 left-0 z-20 w-full p-4 bg-white border-t border-gray-200 shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800 dark:border-gray-600">
+                className="fixed bottom-0 gap-y-15 left-0 z-20 w-full p-4 bg-white border-t border-zinc-200 shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-zinc-800 dark:border-zinc-600">
                 <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400"> 2024
                     </span>
-                <ul className="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
+                <ul className="flex flex-wrap items-center mt-3 text-sm font-medium text-zinc-500 dark:text-zinc-400 sm:mt-0">
                     <li>
                         <a href="#" className="hover:underline me-4 md:me-6">About</a>
                     </li>

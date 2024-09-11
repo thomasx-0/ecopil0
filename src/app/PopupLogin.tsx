@@ -8,7 +8,7 @@ export const PopupLogin: React.FC<PopupPropsLogin> = ({ onClose }) => {
     return (
         <>
             <section
-                className="fixed flex items-start text-left justify-between w-96 p-4 mx-auto bg-white border border-gray-200 shadow-md dark:bg-gray-800 left-12 bottom-24 dark:shadow-gray-900 shadow-gray-100 md:gap-x-4 dark:border-gray-700 rounded-2xl">
+                className="fixed gap-x-1 flex items-start text-left justify-between w-96 p-4 mx-auto bg-white border border-zinc-200 shadow-md dark:bg-zinc-800 left-12 bottom-24 dark:shadow-zinc-900 shadow-zinc-100 md:gap-x-4 dark:border-zinc-700 rounded-2xl">
                     <form className="w-full">
                         <div className="mb-10 space-y-3">
                                 <div className="space-y-2">
@@ -28,7 +28,7 @@ export const PopupLogin: React.FC<PopupPropsLogin> = ({ onClose }) => {
                                         id="password" placeholder="Password" name="password"/>
                                 </div>
                                 <button
-                                    className="ring-offset-background focus-visible:ring-ring flex h-10 w-full items-center justify-center whitespace-nowrap rounded-md bg-black px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-black/90 dark:bg-gray-950 dark:hover:bg-gray-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+                                    className="ring-offset-background focus-visible:ring-ring flex h-10 w-full items-center justify-center whitespace-nowrap rounded-md bg-black px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-black/90 dark:bg-zinc-950 dark:hover:bg-zinc-850 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
                                     type="submit">Login
                                 </button>
                         </div>
@@ -37,7 +37,7 @@ export const PopupLogin: React.FC<PopupPropsLogin> = ({ onClose }) => {
                     one</a></div>
                 <button
                     onClick={onClose}
-                    className="flex items-center justify-center text-gray-700 transition-colors duration-300 rounded-full shrink-0 dark:text-gray-200 dark:hover:bg-gray-700 w-7 h-7 focus:outline-none hover:bg-gray-100">
+                    className="flex items-center justify-center text-zinc-700 transition-colors duration-300 rounded-full shrink-0 dark:text-zinc-200 dark:hover:bg-zinc-700 w-7 h-7 focus:outline-none hover:bg-zinc-100">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
                          className="w-5 h-5">
                         <path
