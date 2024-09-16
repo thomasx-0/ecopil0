@@ -46,5 +46,5 @@ export const PopupLogin: React.FC<PopupPropsLogin> = ({ onClose }) => {
                 </button>
             </section>
         </>
-);
+    );
 };
