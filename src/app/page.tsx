@@ -91,7 +91,7 @@ export default function Home() {
                             <td>Hours of Flight time</td>
                             <td><input type="text"
                                        aria-describedby="helper-text-explanation"
-                                       className="rounded-lg font-mono bg-zinc-100 border-x-0 border-zinc-300 h-11 text-center text-black focus:ring-blue-500 focus:border-blue-500 block w-full py-2.5 dark:bg-black dark:border-zinc-600 dark:placeholder-zinc-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                       className="rounded-lg font-mono bg-white border-x-0 border-zinc-300 h-11 text-center text-black focus:ring-blue-500 focus:border-blue-500 block w-full py-2.5 dark:bg-black dark:border-zinc-600 dark:placeholder-zinc-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                        placeholder="00" required/>
                             </td>
                             <td>-</td>
@@ -102,7 +102,7 @@ export default function Home() {
                             <td>Hours of Commute Time</td>
                             <td><input type="text"
                                        aria-describedby="helper-text-explanation"
-                                       className="rounded-lg font-mono bg-zinc-100 border-x-0 border-zinc-300 h-11 text-center text-black focus:ring-blue-500 focus:border-blue-500 block w-full py-2.5 dark:bg-black dark:border-zinc-600 dark:placeholder-zinc-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                       className="rounded-lg font-mono bg-white border-x-0 border-zinc-300 h-11 text-center text-black focus:ring-blue-500 focus:border-blue-500 block w-full py-2.5 dark:bg-black dark:border-zinc-600 dark:placeholder-zinc-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                        placeholder="00" required/>
                             </td>
                             <td>-</td>
@@ -113,7 +113,7 @@ export default function Home() {
                             <td>Number of Garbage Bags</td>
                             <td><input type="text"
                                        aria-describedby="helper-text-explanation"
-                                       className="rounded-lg font-mono bg-zinc-100 border-x-0 border-zinc-300 h-11 text-center text-black focus:ring-blue-500 focus:border-blue-500 block w-full py-2.5 dark:bg-black dark:border-zinc-600 dark:placeholder-zinc-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                       className="rounded-lg font-mono bg-white border-x-0 border-zinc-300 h-11 text-center text-black focus:ring-blue-500 focus:border-blue-500 block w-full py-2.5 dark:bg-black dark:border-zinc-600 dark:placeholder-zinc-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                        placeholder="00" required/>
                             </td>
                             <td>-</td>
