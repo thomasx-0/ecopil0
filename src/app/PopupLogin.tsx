@@ -8,7 +8,7 @@ export const PopupLogin: React.FC<PopupPropsLogin> = ({ onClose }) => {
     return (
         <>
             <section
-                className="fixed gap-x-1 flex items-start text-left justify-between w-96 p-4 mx-auto bg-white border border-zinc-200 shadow-md dark:bg-zinc-800 left-12 bottom-24 dark:shadow-zinc-900 shadow-zinc-100 md:gap-x-4 dark:border-zinc-700 rounded-2xl">
+                className="fixed gap-x-1 flex items-start text-left justify-between w-96 p-4 mx-auto bg-white border border-zinc-200 shadow-md dark:bg-zinc-900 left-12 bottom-24 dark:shadow-zinc-950 shadow-zinc-100 md:gap-x-4 dark:border-zinc-700 rounded-2xl">
                     <form className="w-full">
                         <div className="mb-10 space-y-3">
                                 <div className="space-y-2">

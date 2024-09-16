@@ -7,7 +7,7 @@ interface PopupPropsHelp {
 export const PopupHelp: React.FC<PopupPropsHelp> = ({ onClose }) => {
   return (
     <section
-      className="fixed flex items-center justify-between max-w-4xl p-4 mx-auto bg-white border border-gray-200 shadow-md dark:bg-zinc-800 left-12 bottom-24 dark:shadow-zinc-900 shadow-zinc-100 md:gap-x-4 dark:border-zinc-700 rounded-2xl">
+      className="fixed flex items-center justify-between max-w-4xl p-4 mx-auto bg-white border border-gray-200 shadow-md dark:bg-zinc-900 left-12 bottom-24 dark:shadow-zinc-950 shadow-zinc-100 md:gap-x-4 dark:border-zinc-700 rounded-2xl">
       <p className="text-sm text-zinc-600 dark:text-zinc-300">
        We will be implementing the contact feature soon, stay tuned!
       </p>
