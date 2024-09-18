@@ -1,8 +1,9 @@
 "use client"
 import Image from "next/image"
 import React, {useState} from "react"
-import {PopupHelp} from "@/app/PopupHelp";
-import {PopupLogin} from "@/app/PopupLogin";
+import {PopupHelp} from "@/app/components/PopupHelp";
+import {PopupLogin} from "@/app/components/PopupLogin";
+import CarbonFootprintChart from './components/CarbonFootprintChart'
 
 
 export default function Home() {
@@ -73,7 +74,7 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-                <div className="overflow-x-auto rounded-lg">
+                <div className="overflow-x-auto rounded-lg gap-y-5">
                     <table className="table">
                         {/* head */}
                         <thead>
@@ -124,6 +125,11 @@ export default function Home() {
             </div>
             {isLoginPopupVisible && <PopupLogin onClose={hideLoginPopup}/>}
             {isPopupVisible && <PopupHelp onClose={hidePopup}/>}
+            <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
+                <div className="max-w-7xl mx-auto">
+                    <CarbonFootprintChart/>
+                </div>
+            </div>
             <footer
                 className="fixed bottom-0 gap-y-15 left-0 z-20 w-full p-4 bg-white border-t border-zinc-200 shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-zinc-900 dark:border-zinc-800">
                 <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400"> 2024
@@ -134,12 +140,12 @@ export default function Home() {
                     </li>
                     <li>
                         <button onClick={showLoginPopup} className="hover:underline me-4 md:me-6">Login</button>
-            </li>
-            <li>
-                            <button onClick={showPopup} className="hover:underline">Contact</button>
-                        </li>
-                    </ul>
-                </footer>
+                    </li>
+                    <li>
+                        <button onClick={showPopup} className="hover:underline">Contact</button>
+                    </li>
+                </ul>
+            </footer>
         </main>
-);
+    );
 }
