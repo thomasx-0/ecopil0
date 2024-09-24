@@ -8,6 +8,8 @@ import CarbonFootprintChart from './components/CarbonFootprintChart'
 
 export default function Home() {
     const [isPopupVisible, setIsPopupVisible] = useState(false);
+
+    // TODO: Remove the login popup feature, keep hook and link with Google cloud
     const [isLoginPopupVisible, setIsLoginPopupVisible] = useState(false);
 
     const showLoginPopup = () => {
@@ -73,54 +75,6 @@ export default function Home() {
                             <div className="badge badge-outline">Ecology</div>
                         </div>
                     </div>
-                </div>
-                <div className="overflow-x-auto rounded-lg gap-y-5">
-                    <table className="table">
-                        {/* head */}
-                        <thead>
-                        <tr className="bg-zinc-100 dark:bg-zinc-900">
-                            <th></th>
-                            <th>Item per Year</th>
-                            <th>Current</th>
-                            <th>Improvement Indicator</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {/* row 1 */}
-                        <tr>
-                            <th>1</th>
-                            <td>Hours of Flight time</td>
-                            <td><input type="text"
-                                       aria-describedby="helper-text-explanation"
-                                       className="rounded-lg font-mono bg-white border-x-0 border-zinc-300 h-11 text-center text-black focus:ring-blue-500 focus:border-blue-500 block w-full py-2.5 dark:bg-black dark:border-zinc-600 dark:placeholder-zinc-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                       placeholder="00" required/>
-                            </td>
-                            <td>-</td>
-                        </tr>
-                        {/* row 2 */}
-                        <tr>
-                            <th>2</th>
-                            <td>Hours of Commute Time</td>
-                            <td><input type="text"
-                                       aria-describedby="helper-text-explanation"
-                                       className="rounded-lg font-mono bg-white border-x-0 border-zinc-300 h-11 text-center text-black focus:ring-blue-500 focus:border-blue-500 block w-full py-2.5 dark:bg-black dark:border-zinc-600 dark:placeholder-zinc-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                       placeholder="00" required/>
-                            </td>
-                            <td>-</td>
-                        </tr>
-                        {/* row 3 */}
-                        <tr>
-                            <th>3</th>
-                            <td>Number of Garbage Bags</td>
-                            <td><input type="text"
-                                       aria-describedby="helper-text-explanation"
-                                       className="rounded-lg font-mono bg-white border-x-0 border-zinc-300 h-11 text-center text-black focus:ring-blue-500 focus:border-blue-500 block w-full py-2.5 dark:bg-black dark:border-zinc-600 dark:placeholder-zinc-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                       placeholder="00" required/>
-                            </td>
-                            <td>-</td>
-                        </tr>
-                        </tbody>
-                    </table>
                 </div>
             </div>
             {isLoginPopupVisible && <PopupLogin onClose={hideLoginPopup}/>}
