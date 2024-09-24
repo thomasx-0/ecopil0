@@ -1,6 +1,6 @@
 {
-  "name": "ecopil",
-  "version": "0.1.0",
+  "name": "ecopil0",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "dev": "next dev",

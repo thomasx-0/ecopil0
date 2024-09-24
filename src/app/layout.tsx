@@ -7,8 +7,8 @@ import React from "react";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Ecopil",
-  description: "Personal Carbon Footprint Tracker",
+  title: "ecopil0",
+  description: "Personal Ecological Footprint Tracker",
 };
 
 export default function RootLayout({
