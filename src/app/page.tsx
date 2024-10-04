@@ -2,7 +2,7 @@
 import React from "react"
 import {Footer} from "@/app/components/footer";
 import { Navbar } from "@/app/components/nav";
-import TwitterEmbed from "@/app/components/xpost";
+import { TwitterEmbed } from "@/app/components/xpost";
 
 
 export default function Home() {

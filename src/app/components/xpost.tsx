@@ -1,9 +1,27 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 
-const TwitterEmbed: React.FC = () => {
+export const TwitterEmbed: React.FC = () => {
+    const [theme, setTheme] = useState<'light' | 'dark'>('light');
+
+    useEffect(() => {
+        if (typeof window !== 'undefined' && window.matchMedia) {
+            const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+            const handleChange = () => {
+                setTheme(mediaQuery.matches ? 'dark' : 'light');
+            };
+
+            setTheme(mediaQuery.matches ? 'dark' : 'light');
+            mediaQuery.addEventListener('change', handleChange);
+
+            return () => {
+                mediaQuery.removeEventListener('change', handleChange);
+            };
+        }
+    }, []);
+
     return (
         <>
-            <blockquote className="twitter-tweet">
+            <blockquote className="twitter-tweet" data-theme={theme}>
                 <p lang="en" dir="ltr">
                     Understanding your <em>personal carbon footprint</em> is the first step towards reducing
                     environmental impact 🌍.
@@ -23,7 +41,5 @@ const TwitterEmbed: React.FC = () => {
             </blockquote>
             <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
         </>
-);
-}
-
-export default TwitterEmbed;
+    );
+};
