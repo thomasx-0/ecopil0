@@ -1,7 +1,9 @@
 import React from 'react';
 import Image from "next/image";
 
-export const ServiceCard = () => {
+
+//TODO: reimplement with tailwind UI component library
+export const Expocard = () => {
     return (
         <>
         <div className="flex flex-row justify-around flex-wrap gap-x-7">

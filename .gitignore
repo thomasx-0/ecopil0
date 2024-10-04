@@ -40,3 +40,5 @@ jspm_packages
 # Environment Variables
 .env.local
 .env
+
+."daisyui": "^4.12.10",
