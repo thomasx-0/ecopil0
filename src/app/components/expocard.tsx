@@ -12,11 +12,11 @@ type CardProps = {
 
 const Card: React.FC<CardProps> = ({ title, description, imageSrcLight, imageSrcDark, badgeText, altText }) => {
     return (
-        <div className="card bg-base-100 w-96 shadow-xl dark:bg-zinc-900">
+        <div className=" w-96 h-auto overflow-hidden rounded-lg bg-white dark:bg-zinc-900 shadow">
             <figure>
                 <picture>
-                    <source srcSet={imageSrcDark} media="(prefers-color-scheme: dark)" />
-                    <source srcSet={imageSrcLight} media="(prefers-color-scheme: light)" />
+                    <source srcSet={imageSrcDark} media="(prefers-color-scheme: dark)"/>
+                    <source srcSet={imageSrcLight} media="(prefers-color-scheme: light)"/>
                     <Image
                         src={imageSrcLight}
                         width={384}
@@ -25,12 +25,9 @@ const Card: React.FC<CardProps> = ({ title, description, imageSrcLight, imageSrc
                     />
                 </picture>
             </figure>
-            <div className="card-body">
+            <div className="px-5 py-7">
                 <h2 className="card-title">
                     {title}
-                    <div className="inline-flex items-center rounded-full bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">
-                        NEW
-                    </div>
                 </h2>
                 <p>{description}</p>
                 <div className="card-actions justify-end">
