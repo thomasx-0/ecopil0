@@ -1,7 +1,7 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 
 export const TwitterEmbed: React.FC = () => {
-    const [theme, setTheme] = useState<'light' | 'dark'>('light');
+    const [theme, setTheme] = useState<'light' | 'dark' | null>(null);
 
     useEffect(() => {
         if (typeof window !== 'undefined' && window.matchMedia) {
@@ -19,9 +19,14 @@ export const TwitterEmbed: React.FC = () => {
         }
     }, []);
 
+    // Before the theme is set, do not render the blockquote
+    if (theme === null) {
+        return null;
+    }
+
     return (
         <>
-            <blockquote className="twitter-tweet" data-theme={theme}>
+            <blockquote className="twitter-tweet w" data-theme={theme}>
                 <p lang="en" dir="ltr">
                     Understanding your <em>personal carbon footprint</em> is the first step towards reducing
                     environmental impact 🌍.
@@ -34,10 +39,8 @@ export const TwitterEmbed: React.FC = () => {
                     <a href="https://t.co/JlgtyaABae">pic.twitter.com/JlgtyaABae</a>
                 </p>
                 &mdash; Thomas Pennant
-                (<a
-                href="https://twitter.com/pennant_th75216/status/1842254477039898687?ref_src=twsrc%5Etfw">@pennant_th75216</a>)
-                <a href="https://twitter.com/pennant_th75216/status/1842254477039898687?ref_src=twsrc%5Etfw">October 4,
-                    2024</a>
+                (<a href="https://twitter.com/pennant_th75216/status/1842254477039898687?ref_src=twsrc%5Etfw">@pennant_th75216</a>)
+                <a href="https://twitter.com/pennant_th75216/status/1842254477039898687?ref_src=twsrc%5Etfw">October 4, 2024</a>
             </blockquote>
             <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
         </>

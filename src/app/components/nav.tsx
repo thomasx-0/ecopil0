@@ -8,8 +8,8 @@ const navItems = {
     '/': {
         name: 'home',
     },
-    '/dashboard': {
-        name: 'dashboard',
+    '/blog': {
+        name: 'blog',
     },
     'https://studio.tailwindui.com/': {
         name: 'studio preview',
@@ -27,7 +27,7 @@ const DownloadButton: React.FC<DownloadButtonProps> = ({ fileUrl }) => {
                 className="rounded-full bg-white px-3.5 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
                 onClick={() => window.location.href = fileUrl}
             >
-                File Download
+                Download Resource
             </button>
         </div>
     );

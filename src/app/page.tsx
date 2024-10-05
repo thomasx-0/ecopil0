@@ -11,7 +11,7 @@ export default function Home() {
     return (
         <main className="flex min-h-screen flex-col justify-around p-20 gap-7 font-sans text-base">
             <Navbar />
-            <div className="flex flex-col justify-around p-20 gap-7 font-sans h-max">
+            <div className="flex sm:flex-col md:flex-col lg:flex-row justify-center items-center p-10 gap-7 font-sans">
                <TwitterEmbed />
                 <Grid />
             </div>
