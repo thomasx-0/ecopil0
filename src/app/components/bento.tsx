@@ -1,3 +1,6 @@
+import React from "react";
+import Image from 'next/image';
+
 export function Grid() {
   return (
       <div className="bg-white py-24 sm:py-32 dark:bg-black dark:text-white">
@@ -42,11 +45,14 @@ export function Grid() {
                   </p>
                 </div>
                 <div className="flex flex-1 items-center justify-center px-8 max-lg:pb-12 max-lg:pt-10 sm:px-10 lg:pb-2">
-                  <img
+                  <Image
                       className="w-full max-lg:max-w-xs"
                       src="https://tailwindui.com/plus/img/component-images/bento-03-performance.png"
-                      alt=""
+                      alt="Bento Box Performance"
+                      width={800}  // You need to manually specify width and height
+                      height={600} // Adjust these values according to your image dimensions
                   />
+                  );
                 </div>
               </div>
               <div className="pointer-events-none absolute inset-px rounded-lg shadow ring-1 ring-black/5 max-lg:rounded-t-[2rem]"></div>
