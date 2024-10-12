@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import React from "react";
-
+import Downloader from "@/app/components/downloader";
 
 const navItems = {
     '/': {
@@ -15,25 +15,6 @@ const navItems = {
         name: 'studio preview',
     },
 }
-
-interface DownloadButtonProps {
-    fileUrl: string;
-}
-
-const DownloadButton: React.FC<DownloadButtonProps> = ({ fileUrl }) => {
-    return (
-        <div className="flex items-center">
-            <button
-                className="rounded-full bg-white px-3.5 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
-                onClick={() => window.location.href = fileUrl}
-            >
-                Download Resource
-            </button>
-        </div>
-    );
-};
-
-export default DownloadButton;
 
 export function Navbar() {
     return (
@@ -55,7 +36,7 @@ export function Navbar() {
                                 </Link>
                             )
                         })}
-                        <DownloadButton fileUrl="https://github.com/tailwindlabs/tailwindcss/releases/download/v2.0.2/tailwindcss-v2.0.2.zip" />
+                        <Downloader />
                     </div>
                 </nav>
             </div>
