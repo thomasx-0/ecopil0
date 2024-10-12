@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { SpeedInsights } from "@vercel/speed-insights/next"
 import "./globals.css";
 import React from "react";
 
@@ -8,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "ecopil0",
-  description: "Personal Ecological Footprint Tracker",
+  description: "Personal Ecological Footprint Advisor",
 };
 
 export default function RootLayout({
@@ -18,7 +17,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-    <SpeedInsights/>
       <body className={inter.className}>{children}</body>
     </html>
   );
