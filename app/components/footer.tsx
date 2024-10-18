@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Popup } from "@/app/components/popup";
+import { Popup } from "./popup";
 
 interface FooterProps {}
 

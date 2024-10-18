@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import React from "react";
-import Downloader from "@/app/components/downloader";
+import Downloader from "./downloader";
 
 const navItems = {
     '/': {
