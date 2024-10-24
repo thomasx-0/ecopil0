@@ -24,7 +24,7 @@ export const Downloader = () => {
     <button
       onClick={downloadResume}
       type="button"
-      className=" ml-4 rounded-full bg-white px-3.5 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+      className={"mt-8 text-center text-sm/6 text-gray-600 md:order-1 md:mt-0"}
     >
      Download Resource
     </button>
