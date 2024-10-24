@@ -17,7 +17,7 @@ export const Footer: React.FC<FooterProps>= () => {
 // FIXME: Popup does not display
   return (
       <>
-            <footer className="bg-white">
+            <footer>
                 {isPopupVisible && <Popup onClose={hidePopup} />}
               <div className="mx-auto max-w-7xl px-6 py-12 md:flex md:items-center md:justify-between lg:px-8">
                 <div className="ml-4 flex justify-center gap-x-6 md:order-2">
